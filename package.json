@@ -1,0 +1,50 @@
+{
+	"name": "simple-unified-ui",
+	"version": "1.0.1",
+	"description": "Component library built with React.js, TypeScript, and styled-components",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"keywords": [
+		"React",
+		"Component",
+		"Library"
+	],
+	"author": "Daniel Kieron Miller",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/preset-env": "^7.22.20",
+		"@babel/preset-react": "^7.22.15",
+		"@babel/preset-typescript": "^7.23.0",
+		"@storybook/addon-essentials": "^7.4.5",
+		"@storybook/addon-interactions": "^7.4.5",
+		"@storybook/addon-links": "^7.4.5",
+		"@storybook/addon-onboarding": "^1.0.8",
+		"@storybook/blocks": "^7.4.5",
+		"@storybook/react": "^7.4.5",
+		"@storybook/react-webpack5": "^7.4.5",
+		"@storybook/testing-library": "^0.2.1",
+		"@types/node": "^20.7.2",
+		"@types/react": "^18.2.23",
+		"@types/react-dom": "^18.2.8",
+		"@types/styled-components": "^5.1.28",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"storybook": "^7.4.5",
+		"styled-components": "^6.0.8",
+		"typescript": "^5.2.2"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"styled-components": "^6.0.8"
+	}
+}
