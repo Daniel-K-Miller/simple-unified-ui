@@ -25,4 +25,12 @@ const LargeButton = styled(Button)`
 	border-radius: 0.25;
 `;
 
-export { SmallButton, MediumButton, LargeButton };
+const EvenLargerButton = styled(Button)`
+	background: ${(props) => props.bgColor};
+	font-size: 3em;
+	padding: 1.5em;
+	color: white;
+	border-radius: 0.5;
+`;
+
+export { SmallButton, MediumButton, LargeButton, EvenLargerButton };
