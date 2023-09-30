@@ -69,6 +69,9 @@ NOTE: you will have to follow the same file structure as existing components
   --- stories (directory)
   ---- [StyledComponentName].stories.ts // file per StyledComponentName
 
+## NPM package
+The released NPM package can be found here: https://www.npmjs.com/package/simple-unified-ui
+
 ## License
 
 MIT
