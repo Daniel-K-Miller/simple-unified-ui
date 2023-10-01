@@ -1,5 +1,0 @@
-# ignore src
-src/**/*
-
-# override above and include ts files - allows src mapping de-bugging
-!src/**/*.ts
