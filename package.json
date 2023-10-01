@@ -4,9 +4,9 @@
 	"description": "Component library built with React.js, TypeScript, and styled-components",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
-	"types": "dist/index.d.ts",
+	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"build": "rm -rf /dist/**/* && npm run build:esm && npm run build:cjs",
+		"build": "rm -rf dist && npm run build:esm && npm run build:cjs",
 		"build:esm": "tsc",
 		"build:cjs": "tsc --module CommonJS --outDir dist/cjs",
 		"test": "echo \"Error: no test specified\" && exit 1",
