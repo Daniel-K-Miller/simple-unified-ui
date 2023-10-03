@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./src",
 		"allowSyntheticDefaultImports": true,
 		"declaration": true,
 		"declarationDir": "dist/types",
@@ -7,14 +8,17 @@
 		"jsx": "react",
 		"lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
 		"types": ["node"],
-		"module": "es2015",
+		"module": "ESNext",
 		"moduleResolution": "node",
 		"noImplicitAny": false,
 		"noUnusedLocals": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
 		"outDir": "dist/esm",
 		"sourceMap": true,
 		"strict": true,
 		"target": "ES6"
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx"]
+	"include": ["src", "themes.ts", "styled.d.ts"],
+	"exclude": ["node_modules/"]
 }
