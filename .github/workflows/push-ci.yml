@@ -2,6 +2,7 @@
 name: Push CI
 on:
   push:
+    tags-ignore: [release]
 jobs:
   build:
     runs-on: ubuntu-latest
