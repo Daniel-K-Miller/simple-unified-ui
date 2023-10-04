@@ -1,11 +1,7 @@
 import React, { FunctionComponent } from "react";
 
-import { Button, IButton } from "components/button";
-
-export interface IFormButton extends IButton {
-	readyToSubmit: boolean;
-	disabled?: boolean;
-}
+import { Button } from "../index";
+import { IFormButton } from "./props";
 
 const FormButton: FunctionComponent<IFormButton> = ({
 	className,

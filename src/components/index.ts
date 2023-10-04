@@ -1,1 +1,1 @@
-export * from "./ExampleButton/styled";
+export * from "./";
