@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Svg } from "components/svgs/base/svg/Svg";
+import { Svg } from "@components/svgs/base/svg";
 
 const SvgBaseStyled = styled(Svg)`
 	width: ${(props) => props.width}px;

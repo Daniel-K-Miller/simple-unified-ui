@@ -4,9 +4,9 @@
 	"description": "Component library built with React.js, TypeScript, and styled-components",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
+	"types": "dist/esm/index.d.ts",
 	"scripts": {
-		"build": "rm -rf dist && npm run build:esm && npm run build:cjs",
+		"build": "rm -rf dist && npm run build:esm && npm run build:cjs && tsc-alias",
 		"build:esm": "tsc",
 		"build:cjs": "tsc --module CommonJS --outDir dist/cjs",
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +21,7 @@
 	"author": "Daniel Kieron Miller",
 	"license": "ISC",
 	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@babel/preset-env": "^7.22.20",
 		"@babel/preset-react": "^7.22.15",
 		"@babel/preset-typescript": "^7.23.0",
@@ -40,6 +41,7 @@
 		"react-dom": "^18.2.0",
 		"storybook": "^7.4.6",
 		"styled-components": "^6.0.8",
+		"tsc-alias": "^1.8.8",
 		"tsconfig-paths-webpack-plugin": "^4.1.0",
 		"typescript": "^5.2.2"
 	},

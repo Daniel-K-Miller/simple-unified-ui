@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Button } from "components/button/index";
+import { Button } from "../button/index";
 
 const ButtonWithPointer = styled(Button)`
 	pointer-events: all !important;
@@ -50,7 +50,7 @@ const PageButtonStyled = styled(ButtonSmlStyled)`
 const CreateNewBlogButton = styled(ButtonLongStyled)`
 	border-radius: 0;
 	@media only screen and (min-width: ${(props) =>
-			props.theme.mediaQueryBreakPoints.smlMobile}) {
+			props.theme.breakPoints.smlMobile}) {
 		border-radius: 5px;
 	}
 `;

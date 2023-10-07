@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactChild } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 
 export interface ISvg {
 	className?: string;
@@ -6,7 +6,7 @@ export interface ISvg {
 	height?: string | number;
 	vpwidth: string | number;
 	vpheight: string | number;
-	children: ReactChild | Array<ReactChild>;
+	children: ReactNode | Array<ReactNode>;
 	fill?: string;
 	stroke?: string;
 }

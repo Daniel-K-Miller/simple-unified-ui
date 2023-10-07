@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { useTheme } from "styled-components";
 
-import { SvgBaseStyled as Svg } from "components/svgs/base/svg/_styled";
-import { Shape } from "components/svgs/base/shape/Shape";
+import { SvgBaseStyled as Svg } from "@components/svgs/base/svg/styled";
+import { Shape } from "@components/svgs/base/shape";
 
-import { ShapeTypes } from "enums/ShapeTypes";
+import { ShapeTypes } from "@enums/ShapeTypes";
 
 const NextSVG: FunctionComponent = () => {
 	const theme = useTheme();

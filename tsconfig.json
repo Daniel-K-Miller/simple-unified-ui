@@ -3,7 +3,6 @@
 		"baseUrl": "./src",
 		"allowSyntheticDefaultImports": true,
 		"declaration": true,
-		"declarationDir": "dist/types",
 		"esModuleInterop": true,
 		"jsx": "react",
 		"lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
@@ -17,8 +16,14 @@
 		"outDir": "dist/esm",
 		"sourceMap": true,
 		"strict": true,
-		"target": "ES6"
+		"target": "ES6",
+		"paths": {
+			"@base/*": ["./*"],
+			"@components/*": ["components/*"],
+			"@enums/*": ["enums/*"],
+			"@interfaces/*": ["interfaces/*"]
+		}
 	},
-	"include": ["src", "themes.ts", "styled.d.ts"],
+	"include": ["src"],
 	"exclude": ["node_modules/"]
 }

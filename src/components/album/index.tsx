@@ -9,8 +9,8 @@ import React, {
 import { IAlbum } from "./props";
 
 // components
-import { AlbumItemsStyled as Items } from "components/album/items/styled";
-import { AlbumControlsStyled as Controls } from "components/album/controls/styled";
+import { AlbumItemsStyled as Items } from "../album/items/styled";
+import { AlbumControlsStyled as Controls } from "../album/controls/styled";
 
 const Album: FunctionComponent<IAlbum> = ({
 	className,

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 
-import { SvgBaseStyled as Svg } from "components/svgs/base/svg/_styled";
-import { G } from "components/svgs/base/g/G";
-import { Shape } from "components/svgs/base/shape/Shape";
+import { SvgBaseStyled as Svg } from "@components/svgs/base/svg/styled";
+import { G } from "@components/svgs/base/g";
+import { Shape } from "@components/svgs/base/shape";
 
 import { ShapeTypes } from "enums/ShapeTypes";
 

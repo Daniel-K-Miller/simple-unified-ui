@@ -40,7 +40,7 @@ const AlbumItemsStyled = styled(AlbumItems)`
 		}
 	}
 	@media only screen and (min-width: ${(props) =>
-			props.theme.mediaQueryBreakPoints.smlMobile}) {
+			props.theme.breakPoints.smlMobile}) {
 		${(props) =>
 			props.addControlBoxing &&
 			css`

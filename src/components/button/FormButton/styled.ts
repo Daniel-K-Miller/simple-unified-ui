@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { FormButton } from "components/button/FormButton/FormButton";
+import { FormButton } from "../../button/FormButton";
 
 const FormButtonStyled = styled(FormButton)`
 	height: auto;

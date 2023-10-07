@@ -1,25 +1,37 @@
-import { IBaseTheme, DefaultTheme } from "styled-components";
+import { DefaultTheme, SimpleUnifiedTheming } from "styled-components";
 
-export const baseTheme: IBaseTheme = {
+const standardOpacity: SimpleUnifiedTheming.IOpacity = {
 	opacity: {
 		dimmed: 0.4,
 		bright: 0.8,
 	},
+};
+
+const standardSpacing: SimpleUnifiedTheming.ISpacing = {
 	spacing: {
 		margin: "0.5em",
 		padding: "1em",
 		border: "3px",
 	},
+};
+
+const standardFont: SimpleUnifiedTheming.IFont = {
 	font: {
 		family: ["sans-serif"],
 		rootSize: "1em",
 	},
+};
+
+const standardRadius: SimpleUnifiedTheming.IRadius = {
 	radius: {
 		small: 0.25,
 		medium: 0.5,
 		large: 0.75,
 	},
-	mediaQueryBreakPoints: {
+};
+
+const standardBreakpoints: SimpleUnifiedTheming.IBreakPoints = {
+	breakPoints: {
 		smlMobile: "576px",
 		lrgMobile: "720px",
 		Tablet: "1024px",
@@ -27,7 +39,7 @@ export const baseTheme: IBaseTheme = {
 	},
 };
 
-export const lightTheme: DefaultTheme = {
+const lightColours: SimpleUnifiedTheming.IColours = {
 	colors: {
 		text: "#1a1a1a",
 		textAlt: "#303030",
@@ -45,10 +57,9 @@ export const lightTheme: DefaultTheme = {
 			purple: "#000000",
 		},
 	},
-	...baseTheme,
 };
 
-export const darkTheme: DefaultTheme = {
+const darkColours: SimpleUnifiedTheming.IColours = {
 	colors: {
 		text: "#f9f6ef",
 		textAlt: "#cfcbc2",
@@ -66,5 +77,22 @@ export const darkTheme: DefaultTheme = {
 			purple: "#000000",
 		},
 	},
-	...baseTheme,
+};
+
+export const lightTheme: DefaultTheme = {
+	...standardOpacity,
+	...standardSpacing,
+	...standardFont,
+	...standardRadius,
+	...standardBreakpoints,
+	...lightColours,
+};
+
+export const darkTheme: DefaultTheme = {
+	...standardOpacity,
+	...standardSpacing,
+	...standardFont,
+	...standardRadius,
+	...standardBreakpoints,
+	...darkColours,
 };

@@ -1,6 +1,6 @@
 import { RefObject } from "react";
 
-import { IImage } from "interfaces/IImage";
+import { IImage } from "../../../interfaces/IImage";
 
 export interface IAlbumItems {
 	className?: string;

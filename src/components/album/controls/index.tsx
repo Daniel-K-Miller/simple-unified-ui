@@ -3,11 +3,11 @@ import React, { FunctionComponent } from "react";
 import { IControls } from "./props";
 
 // enums
-import { ButtonType } from "enums/ButtonType";
+import { ButtonType } from "../../../enums/ButtonType";
 
 // components
-import { AlbumButtonStyled as Button } from "components/button/styled";
-import { NextSVG } from "components/svgs/Next";
+import { AlbumButtonStyled as Button } from "../../button/styled";
+import { NextSVG } from "../../svgs/Next";
 
 const AlbumControls: FunctionComponent<IControls> = ({
 	className,

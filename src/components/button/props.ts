@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ButtonType } from "enums/ButtonType";
+import { ButtonType } from "../../enums/ButtonType";
 
 export interface IButton {
 	className?: string;
