@@ -6,7 +6,7 @@ import { IControls } from "./props";
 import { ButtonType } from "../../../enums/ButtonType";
 
 // components
-import { AlbumButtonStyled as Button } from "../../button/styled";
+import { ButtonBase as Button } from "../../button/styled";
 import { NextSVG } from "../../svgs/Next";
 
 const AlbumControls: FunctionComponent<IControls> = ({

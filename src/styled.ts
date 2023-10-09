@@ -55,9 +55,9 @@ declare module "styled-components" {
 
 		export interface IRadius {
 			radius: {
-				small: number;
-				medium: number;
-				large: number;
+				small: string;
+				medium: string;
+				large: string;
 			};
 		}
 

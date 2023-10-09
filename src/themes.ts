@@ -24,9 +24,9 @@ const standardFont: SimpleUnifiedTheming.IFont = {
 
 const standardRadius: SimpleUnifiedTheming.IRadius = {
 	radius: {
-		small: 0.25,
-		medium: 0.5,
-		large: 0.75,
+		small: "4px",
+		medium: "6px",
+		large: "8px",
 	},
 };
 
