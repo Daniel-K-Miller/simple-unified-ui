@@ -1,4 +1,4 @@
-# simple-unified-UI
+# simple-unified-ui
 
 ## introduction
 A re-usuable React component library Common sought after components put together into a single place for you to use!
@@ -44,12 +44,12 @@ import { ButtonSmlStyled } from "simple-unified-ui";
 export const App = () => (
   <div>
     <h1>My Simple App</h1>
-    <ButtonSmlStyled
+    <ButtonBase
       onClick={() => {
         console.log("test");
       }}
     >
-    Simple Unified UI Large Button
+    Example Button
     <LargeButton>
   </div>
 );
@@ -76,13 +76,14 @@ NOTE: when adding components or making changes you will have to follow the same 
 ### Component file structure
 ```text
 ...
-├── button            			        # component root folder e.g. button
-    ├── index.tsx        		        # react component
-    ├── props.ts         		        # interface file defining props for index.tsx
-    ├── styled.ts        		        # styled component (uses ./index.tsx) to add styling
-    └── stories          		        # stories directory for component
-        ├── largeButton.stories.ts    	# example story for component
-        └── smallButton.stories.ts    	# example story for component
+├── button                             # component root folder e.g. button
+│   ├── index.tsx        	       # react component
+│   ├── props.ts                       # interface file defining props for index.tsx
+│   ├── styled.ts        	       # styled component (uses ./index.tsx) to add styling
+│   └── stories                        # stories directory for component
+│       ├── ButtonBase.stories.ts      # example story for component
+│       └── HollowButton.stories.ts    # example story for component
+...
 ```
 
 ## Resources
