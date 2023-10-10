@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from "react";
 
 import { IButton } from "./props";
+import { SizeType } from "@enums/SizeType";
 
 const Button: FunctionComponent<IButton> = ({
 	className,
 	children,
 	type,
 	disabled,
+	size = SizeType.medium,
 	onClick,
 }) => {
 	return (
