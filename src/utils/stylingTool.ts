@@ -26,17 +26,7 @@ export class StylingTool {
 		const verticalPadding = StylingTool.multiplyStyle(padding, 0.5);
 		const horizontalPadding = StylingTool.multiplyStyle(padding, 1);
 
-		const SizeMultiplers = { small: 0.5, medium: 1, large: 1.25 };
-
-		return `${StylingTool.calcValueFromSize(
-			this.size,
-			verticalPadding,
-			SizeMultiplers
-		)} ${StylingTool.calcValueFromSize(
-			this.size,
-			horizontalPadding,
-			SizeMultiplers
-		)}`;
+		return `${verticalPadding} ${horizontalPadding}`;
 	}
 
 	public calcFontSize(): string {
@@ -80,8 +70,6 @@ export class StylingTool {
 		let letters: string = "";
 
 		let split = value.split(/(\d+)/);
-
-		console.log(split);
 
 		let nums: Array<string> = [];
 

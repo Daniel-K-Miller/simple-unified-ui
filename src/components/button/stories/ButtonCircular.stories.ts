@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ButtonBase } from "../styled";
+import { ButtonCircular } from "../styled";
 import { ButtonType } from "@enums/ButtonType";
 import { SizeType } from "@enums/SizeType";
 
-const meta: Meta<typeof ButtonBase> = {
-	component: ButtonBase,
+const meta: Meta<typeof ButtonCircular> = {
+	component: ButtonCircular,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ButtonBase>;
+type Story = StoryObj<typeof ButtonCircular>;
 
-export const buttonBase: Story = {
+export const buttonCircular: Story = {
 	args: {
 		type: ButtonType.BUTTON,
-		children: "Click Here!",
+		children: "!",
 		size: SizeType.medium,
 	},
 };

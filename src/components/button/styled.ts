@@ -42,4 +42,11 @@ const ButtonOutline = styled(ButtonBase)`
 	}}
 `;
 
-export { ButtonBase, ButtonOutline };
+// use case most likely with SVGs (text with aspect ratio 1:1 can be quite large!)
+const ButtonCircular = styled(ButtonBase)`
+	border-radius: 50%;
+	height: max-content;
+	aspect-ratio: 1 / 1;
+`;
+
+export { ButtonBase, ButtonOutline, ButtonCircular };

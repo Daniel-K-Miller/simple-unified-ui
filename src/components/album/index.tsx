@@ -37,8 +37,6 @@ const Album: FunctionComponent<IAlbum> = ({
 
 	//#region shouldAlbumDislayButtons
 	const shouldAlbumDisplayButtons = (): boolean | null => {
-		console.log(itemsContainer.current?.clientWidth);
-
 		if (itemsContainer.current?.clientWidth == null) return null;
 
 		const shouldDisplay =
@@ -46,8 +44,6 @@ const Album: FunctionComponent<IAlbum> = ({
 			itemsContainer.current?.clientWidth
 				? true
 				: false;
-
-		console.log(shouldDisplay);
 
 		if (shouldDisplay) updateButtons();
 
