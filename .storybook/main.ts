@@ -20,13 +20,11 @@ const config: StorybookConfig = {
 		"@storybook/addon-essentials",
 		"@storybook/addon-onboarding",
 		"@storybook/addon-interactions",
+		"@storybook/addon-docs",
 	],
 	framework: {
 		name: "@storybook/react-webpack5",
 		options: {},
-	},
-	docs: {
-		autodocs: "tag",
 	},
 };
 export default config;

@@ -10,11 +10,11 @@ export default meta;
 
 type Story = StoryObj<typeof AlbumStyled>;
 
-export const threeItems: Story = {
+export const sevenItems: Story = {
 	args: {
 		itemGap: 15,
 		itemWidth: 250,
-		name: "test thing",
+		name: "test album",
 		handleItemClick: () => console.log("test"),
 		items: [
 			{
