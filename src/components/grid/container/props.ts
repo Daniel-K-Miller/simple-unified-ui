@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
+import { ReactElement } from "react";
+import { IGridItem } from "../item/props";
 
 export interface IGridContainer {
 	className?: string;
-	children: ReactNode | Array<ReactNode>;
+	children: Array<ReactElement<IGridItem>>;
 }
