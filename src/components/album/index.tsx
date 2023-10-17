@@ -208,7 +208,6 @@ const Album: FunctionComponent<IAlbum> = ({
 		<div className={className}>
 			<Items
 				containerRef={itemsContainer}
-				name={name}
 				items={items}
 				itemWidth={itemWidth}
 				itemGap={itemGap}

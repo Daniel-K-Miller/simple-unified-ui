@@ -6,6 +6,13 @@ import { SizeType } from "@enums/SizeType";
 
 const meta: Meta<typeof ButtonBase> = {
 	component: ButtonBase,
+	parameters: {
+		docs: {
+			description: {
+				component: "Base styling of button component",
+			},
+		},
+	},
 };
 
 export default meta;

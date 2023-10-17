@@ -4,6 +4,13 @@ import { AlbumStyled } from "../styled";
 
 const meta: Meta<typeof AlbumStyled> = {
 	component: AlbumStyled,
+	parameters: {
+		docs: {
+			description: {
+				component: "Carousel styled component for displaying images",
+			},
+		},
+	},
 };
 
 export default meta;

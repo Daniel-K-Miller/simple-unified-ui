@@ -7,6 +7,14 @@ import { GridItemStyled } from "../item/styled";
 
 const meta: Meta<typeof GridContainerStyled> = {
 	component: GridContainerStyled,
+	parameters: {
+		docs: {
+			description: {
+				component:
+					"Grid component consisting of parent GridContainer (simply a parent div container) and children GridItems (child div container which has a size property). The GridItems have a maximum size value of 12. This implementation is based on the flex box CSS styling. ",
+			},
+		},
+	},
 };
 
 export default meta;
@@ -14,8 +22,10 @@ export default meta;
 type Story = StoryObj<typeof GridContainerStyled>;
 
 const textString = (size: number) => {
-	return `${(size / 12).toFixed(3)}% width`;
+	return `size: ${size} (${(size / 12).toFixed(3)}% width)`;
 };
+
+/** example usage of three GridItems */
 
 export const CompleteGrid: Story = {
 	render: () => (
@@ -40,6 +50,8 @@ export const CompleteGrid: Story = {
 		</GridContainerStyled>
 	),
 };
+
+/** example usage of four GridItems spanning over two rows */
 
 export const WrappedGrid: Story = {
 	render: () => (
@@ -75,6 +87,8 @@ export const WrappedGrid: Story = {
 		</GridContainerStyled>
 	),
 };
+
+/** example usage of four GridItems spanning over three rows (due to odd sizes - remember a row is only avaiable for a maximum size of 12) */
 
 export const WrapperOverflowGrid: Story = {
 	render: () => (

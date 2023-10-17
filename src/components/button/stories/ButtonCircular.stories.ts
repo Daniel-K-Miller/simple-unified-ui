@@ -6,6 +6,14 @@ import { SizeType } from "@enums/SizeType";
 
 const meta: Meta<typeof ButtonCircular> = {
 	component: ButtonCircular,
+	parameters: {
+		docs: {
+			description: {
+				component:
+					"Circular styling of button component (extended from ButtonBase)",
+			},
+		},
+	},
 };
 
 export default meta;

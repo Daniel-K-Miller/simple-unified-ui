@@ -6,6 +6,14 @@ import { SizeType } from "@enums/SizeType";
 
 const meta: Meta<typeof ButtonOutline> = {
 	component: ButtonOutline,
+	parameters: {
+		docs: {
+			description: {
+				component:
+					"Outline styling of button component (extended from ButtonBase)",
+			},
+		},
+	},
 };
 
 export default meta;
