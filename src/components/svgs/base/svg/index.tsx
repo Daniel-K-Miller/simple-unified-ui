@@ -9,6 +9,7 @@ export interface ISvg {
 	children: ReactNode | Array<ReactNode>;
 	fill?: string;
 	stroke?: string;
+	rotate?: number;
 }
 
 const Svg: FunctionComponent<ISvg> = ({
