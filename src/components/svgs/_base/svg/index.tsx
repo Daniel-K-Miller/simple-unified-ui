@@ -1,16 +1,5 @@
-import React, { FunctionComponent, ReactNode } from "react";
-
-export interface ISvg {
-	className?: string;
-	width?: string | number;
-	height?: string | number;
-	vpwidth: string | number;
-	vpheight: string | number;
-	children: ReactNode | Array<ReactNode>;
-	fill?: string;
-	stroke?: string;
-	rotate?: number;
-}
+import React, { FunctionComponent } from "react";
+import { ISvg } from "./props";
 
 const Svg: FunctionComponent<ISvg> = ({
 	className,

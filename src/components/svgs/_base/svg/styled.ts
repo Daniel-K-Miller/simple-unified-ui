@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Svg } from "@components/svgs/base/svg";
+import { Svg } from "@base/components/svgs/_base/svg";
 
 const SvgBaseStyled = styled(Svg)`
 	${(props) => {
@@ -14,8 +14,8 @@ const SvgBaseStyled = styled(Svg)`
 			? `transform: rotate(${props.rotate}deg)`
 			: ``;
 
-		const width = props.width ? `${props.width}px` : "auto";
-		const height = props.height ? `${props.height}px` : "auto";
+		const width = props.width ? `${props.width}` : "auto";
+		const height = props.height ? `${props.height}` : "auto";
 
 		return css`
 			width: ${width};

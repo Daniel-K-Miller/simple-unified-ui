@@ -6,7 +6,7 @@ import { ButtonCircular } from "../styled";
 import { ButtonType } from "@enums/ButtonType";
 import { SizeType } from "@enums/SizeType";
 
-import { ArrowSVG } from "@base/components/svgs/Arrow";
+import { Arrow } from "@base/components/svgs/arrow";
 
 const meta: Meta<typeof ButtonCircular> = {
 	component: ButtonCircular,
@@ -28,7 +28,7 @@ export const buttonCircular: Story = {
 	render: () => {
 		return (
 			<ButtonCircular size={SizeType.medium} type={ButtonType.BUTTON}>
-				<ArrowSVG />
+				<Arrow />
 			</ButtonCircular>
 		);
 	},

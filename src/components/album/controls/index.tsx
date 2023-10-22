@@ -8,7 +8,7 @@ import { SizeType } from "@base/enums/SizeType";
 
 // components
 import { ButtonBase } from "@components/button/styled";
-import { ArrowSVG } from "@components/svgs/Arrow";
+import { Arrow } from "@base/components/svgs/arrow";
 
 const AlbumControls: FunctionComponent<IControls> = ({
 	className,
@@ -27,7 +27,7 @@ const AlbumControls: FunctionComponent<IControls> = ({
 					size={SizeType.medium}
 					disabled={isLeftButtonDisabled ?? false}
 				>
-					<ArrowSVG />
+					<Arrow />
 				</ButtonBase>
 			);
 		}
@@ -39,7 +39,7 @@ const AlbumControls: FunctionComponent<IControls> = ({
 				size={SizeType.medium}
 				disabled={isRightButtonDisabled ?? false}
 			>
-				<ArrowSVG />
+				<Arrow />
 			</ButtonBase>
 		);
 	};

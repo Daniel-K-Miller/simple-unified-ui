@@ -6,4 +6,6 @@ export * from "./button/styled";
 export * from "./grid/container/styled";
 export * from "./grid/item/styled";
 
+export * from "./svgs/arrow";
+
 export * from "./";
