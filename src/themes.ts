@@ -43,8 +43,8 @@ const lightColours: SimpleUnifiedTheming.IColours = {
 	colors: {
 		text: "#1a1a1a",
 		textAlt: "#303030",
-		background: "#f5f2ea",
-		backgroundAlt: "#dddddd",
+		background: "rgb(249, 246, 239)",
+		backgroundAlt: "rgb(245, 242, 234)",
 		mainAccent: "green",
 		altAccent: "blue",
 		accents: {

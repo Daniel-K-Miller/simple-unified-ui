@@ -1,4 +1,4 @@
-import { Direction } from "@enums/direction";
+import { Direction } from "@base/enums/Direction";
 
 export function calcRotation(
 	startDirection: Direction,

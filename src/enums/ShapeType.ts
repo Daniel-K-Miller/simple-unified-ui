@@ -1,4 +1,4 @@
-export enum ShapeTypes {
+export enum ShapeType {
 	PATH = "path",
 	POLYGON = "polygon",
 }

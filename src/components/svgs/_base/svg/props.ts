@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { Direction } from "@enums/direction";
+import { Direction } from "@base/enums/Direction";
 
 import { IShape } from "../shape";
 import { IG } from "../g";

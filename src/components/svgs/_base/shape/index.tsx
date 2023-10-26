@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 
-import { ShapeTypes } from "@enums/ShapeTypes";
+import { ShapeType } from "@base/enums/ShapeType";
 
 export interface IShape {
-	type: ShapeTypes;
+	type: ShapeType;
 	value: string;
 }
 
@@ -13,10 +13,10 @@ const Shape: FunctionComponent<IShape> = ({ type, value }) => {
 	const attr = {} as any;
 
 	switch (type) {
-		case ShapeTypes.PATH:
+		case ShapeType.PATH:
 			attr["d"] = value;
 			break;
-		case ShapeTypes.POLYGON:
+		case ShapeType.POLYGON:
 			attr["points"] = value;
 			break;
 	}
