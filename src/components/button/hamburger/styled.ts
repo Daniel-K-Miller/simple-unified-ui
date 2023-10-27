@@ -3,8 +3,14 @@ import styled, { css } from "styled-components";
 import { HamburgerButton } from "./index";
 
 const HamburgerButtonStyled = styled(HamburgerButton)`
+	::after {
+		display: block;
+		content: "";
+		width: 50px;
+		height: 50px;
+	}
 	position: absolute; // new
-	top: 1em; // new
+	top: 0; // new
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

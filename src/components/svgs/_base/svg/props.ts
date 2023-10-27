@@ -24,8 +24,12 @@ export interface IBaseSvgWithDirection extends IBaseSvg {
 }
 
 export interface ISvg extends IBaseSvg {
+	/** Used automatically for styled-components */
 	className?: string;
+	/** Mapped directly to width within 'viewBox' attribute  */
 	vpwidth: string | number;
+	/** Mapped directly to height within 'viewBox' attribute  */
 	vpheight: string | number;
+	/** Strict to either Shape OR G component (based of native HTML elements)  */
 	children: ReactElement<IShape> | ReactElement<IG>;
 }

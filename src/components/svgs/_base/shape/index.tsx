@@ -5,9 +5,10 @@ import { ShapeType } from "@base/enums/ShapeType";
 export interface IShape {
 	type: ShapeType;
 	value: string;
+	scale?: number;
 }
 
-const Shape: FunctionComponent<IShape> = ({ type, value }) => {
+const Shape: FunctionComponent<IShape> = ({ type, value, scale }) => {
 	const Tag = `${type}` as keyof JSX.IntrinsicElements;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const attr = {} as any;
@@ -20,6 +21,8 @@ const Shape: FunctionComponent<IShape> = ({ type, value }) => {
 			attr["points"] = value;
 			break;
 	}
+
+	if (scale !== undefined) attr["transform"] = `scale(${scale})`;
 
 	return <Tag {...attr} />;
 };
