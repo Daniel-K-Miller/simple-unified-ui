@@ -22,6 +22,4 @@ const Toggle: FunctionComponent<IToggle> = ({
 	);
 };
 
-Toggle.displayName = "ToggleSwitch";
-
 export { Toggle };

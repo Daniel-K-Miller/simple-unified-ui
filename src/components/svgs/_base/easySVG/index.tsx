@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
 
-import { SvgBaseStyled as Svg } from "@base/components/svgs/_base/svg/styled";
+import { SvgBaseStyled as Svg } from "@components/svgs/_base/svg/styled";
 
 import { IEasySVG } from "./props";
 
-import { calcRotation } from "@base/utils/calcRotation";
-import { Direction } from "@base/enums/Direction";
+import { calcRotation } from "@utils/calcRotation";
+import { Direction } from "@enums/Direction";
 
 const EasySVG: FunctionComponent<IEasySVG> = ({
 	vpwidth,
