@@ -7,11 +7,13 @@ const HamburgerButton: FunctionComponent<IHamburgerButton> = ({
 	onClick,
 }) => {
 	return (
-		<button className={className} onClick={onClick}>
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
+		<div className={className}>
+			<button onClick={onClick}>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
 	);
 };
 

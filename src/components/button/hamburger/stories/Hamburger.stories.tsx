@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { HamburgerButtonStyled } from "../styled";
 
 const meta: Meta<typeof HamburgerButtonStyled> = {
+	title: "button/Hamburger",
 	component: HamburgerButtonStyled,
 	parameters: {
 		docs: {

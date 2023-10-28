@@ -6,7 +6,7 @@ import { IBaseSvgWithDirection } from "@components/svgs/_base/svg/props";
 
 import { ShapeType } from "@base/enums/ShapeType";
 
-const Arrow: FunctionComponent<IBaseSvgWithDirection> = ({
+const Chevron: FunctionComponent<IBaseSvgWithDirection> = ({
 	height,
 	fill,
 	stroke,
@@ -33,4 +33,4 @@ const Arrow: FunctionComponent<IBaseSvgWithDirection> = ({
 	);
 };
 
-export { Arrow };
+export { Chevron };

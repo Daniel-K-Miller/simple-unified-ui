@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { AlbumStyled } from "../styled";
 
 const meta: Meta<typeof AlbumStyled> = {
+	title: "Advanced/Album",
 	component: AlbumStyled,
 	parameters: {
 		docs: {

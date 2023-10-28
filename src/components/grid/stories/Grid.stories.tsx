@@ -6,12 +6,13 @@ import { GridContainerStyled } from "../container/styled";
 import { GridItemStyled } from "../item/styled";
 
 const meta: Meta<typeof GridContainerStyled> = {
+	title: "Core/Grid",
 	component: GridContainerStyled,
 	parameters: {
 		docs: {
 			description: {
 				component:
-					"Grid component consisting of parent GridContainer (simply a parent div container) and children GridItems (child div container which has a size property). The GridItems have a maximum size value of 12. This implementation is based on the flex box CSS styling. ",
+					"Grid component consisting of parent GridContainer (simply a parent div container) and children GridItems (child div container which has a size property). The GridItems have a maximum size value of 12. This implementation is based on the flex box CSS styling. \n \n NOTE: THIS IS NOT A SINGLE COMPONENT BUT AN EXAMPLE OF USING BOTH 'GridContainer' & 'GridItem' together",
 			},
 		},
 	},

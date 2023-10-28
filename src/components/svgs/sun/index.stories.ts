@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Sun } from "./index";
 
 const meta: Meta<typeof Sun> = {
+	title: "SVGs/Sun",
 	component: Sun,
 	parameters: {
 		docs: {
@@ -17,6 +18,9 @@ export default meta;
 
 type Story = StoryObj<typeof Sun>;
 
-export const buttonBase: Story = {
-	args: {},
+export const sun: Story = {
+	args: {
+		fill: "black",
+		height: "50px",
+	},
 };

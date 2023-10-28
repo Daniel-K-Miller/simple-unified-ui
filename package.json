@@ -1,6 +1,6 @@
 {
 	"name": "simple-unified-ui",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"description": "Component library built with React.js, TypeScript, and styled-components",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -10,7 +10,7 @@
 		"build:esm": "tsc",
 		"build:cjs": "tsc --module CommonJS --outDir dist/cjs",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"storybook": "storybook dev -p 6006",
+		"storybook": "storybook dev -s ./ -p 6006",
 		"build-storybook": "storybook build"
 	},
 	"keywords": [

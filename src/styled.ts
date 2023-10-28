@@ -1,4 +1,4 @@
-// composed of all default theme interfaces
+// file used for styled-components
 import "styled-components";
 
 declare module "styled-components" {

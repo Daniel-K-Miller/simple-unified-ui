@@ -7,6 +7,7 @@ import { BlockType } from "@enums/BlockType";
 import { HeadingType } from "@base/enums/HeadingType";
 
 const meta: Meta<typeof BlockStyled> = {
+	title: "Core/Block",
 	component: BlockStyled,
 	parameters: {
 		docs: {

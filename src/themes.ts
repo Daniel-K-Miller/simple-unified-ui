@@ -1,3 +1,4 @@
+// file used for styled-components
 import { DefaultTheme, SimpleUnifiedTheming } from "styled-components";
 
 const standardOpacity: SimpleUnifiedTheming.IOpacity = {

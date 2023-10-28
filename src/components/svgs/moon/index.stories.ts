@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Moon } from "./index";
 
 const meta: Meta<typeof Moon> = {
+	title: "SVGs/Moon",
 	component: Moon,
 	parameters: {
 		docs: {
@@ -17,6 +18,9 @@ export default meta;
 
 type Story = StoryObj<typeof Moon>;
 
-export const buttonBase: Story = {
-	args: {},
+export const moon: Story = {
+	args: {
+		fill: "black",
+		height: "50px",
+	},
 };

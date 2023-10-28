@@ -8,6 +8,7 @@ import { Moon } from "@components/svgs/moon/index";
 import { Sun } from "@components/svgs/sun/index";
 
 const meta: Meta<typeof ToggleBaseStyled> = {
+	title: "button/Toggle",
 	component: ToggleBaseStyled,
 	parameters: {
 		docs: {
