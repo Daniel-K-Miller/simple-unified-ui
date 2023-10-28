@@ -6,9 +6,10 @@ export interface IShape {
 	type: ShapeType;
 	value: string;
 	scale?: number;
+	fill?: string;
 }
 
-const Shape: FunctionComponent<IShape> = ({ type, value, scale }) => {
+const Shape: FunctionComponent<IShape> = ({ type, value, scale, fill }) => {
 	const Tag = `${type}` as keyof JSX.IntrinsicElements;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const attr = {} as any;
@@ -23,6 +24,8 @@ const Shape: FunctionComponent<IShape> = ({ type, value, scale }) => {
 	}
 
 	if (scale !== undefined) attr["transform"] = `scale(${scale})`;
+
+	if (fill !== undefined) attr["fill"] = fill;
 
 	return <Tag {...attr} />;
 };

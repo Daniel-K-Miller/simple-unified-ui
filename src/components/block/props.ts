@@ -12,7 +12,9 @@ export interface IBlock {
 	children: ReactNode;
 	/** Used to generate heading on component */
 	heading?: {
+		/** Heading element to generate either: "h1", "h2", "h3", "h4", "h5", or "h6" */
 		size?: HeadingType;
+		/** Text content to go inside heading tag generated */
 		text?: string;
 	};
 }

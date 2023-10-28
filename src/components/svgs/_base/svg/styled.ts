@@ -22,6 +22,7 @@ const SvgBaseStyled = styled(Svg)`
 			height: ${height};
 			${fill};
 			${transform};
+			${props.stroke && `stroke: ${props.stroke}`};
 		`;
 	}}
 `;
