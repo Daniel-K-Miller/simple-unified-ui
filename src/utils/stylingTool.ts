@@ -1,3 +1,4 @@
+// used in various styled components for quick access to useful helpers
 import { SizeType } from "@base/enums/SizeType";
 import { DefaultTheme } from "styled-components";
 

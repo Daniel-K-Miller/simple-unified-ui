@@ -1,0 +1,59 @@
+{
+	"Insert React Function Component Template": {
+		"prefix": "tem-rfc",
+		"body": [
+			"import React, { FunctionComponent } from \"react\";",
+			"",
+			"import { I${1:ComponentName} } from \"./props\";"
+			""
+			"const ${1:ComponentName}: FunctionComponent<I${1:ComponentName}> = ({ ${2} }) => {"
+			"	return (${3});"
+			"};"
+			""
+			"export { ${1:ComponentName} };"
+		],
+		"description": "Insert React Function Component template.",
+	},
+	"Insert Styled Component Template": {
+		"prefix": "tem-rsc",
+		"body": [
+			"import styled from \"styled-components\";\n",
+			"import ${1:ComponentName} from \"./${1:ComponentName}\";\n",
+			"const ${1:ComponentName}Styled = styled(${1:ComponentName})`",
+			"\t$0\n`;\n",
+			"export { ${1:ComponentName}Styled };"
+		],
+		"description": "Insert Styled Component template.",
+	},
+	"Insert Storybook Template": {
+		"prefix": "tem-sb",
+		"scope": "typescriptreact,typescript",
+		"body": [
+			"import type { Meta, StoryObj } from \"@storybook/react\";",
+			"",
+			"import { ${1:ComponentName} } from \"../styled\";",
+			"",
+			"const meta: Meta<typeof ${1:ComponentName}> = {"
+			"	title: \"${1:ComponentName}\","
+			"	component: ${1:ComponentName},"
+			"	parameters: {"
+			"		docs: {"
+			"			description: {"
+			"				component: \"${1:ComponentName} component\","
+			"			},"
+			"		},"
+			"	},"
+			"};",
+			"export default meta;"
+			""
+			"type Story = StoryObj<typeof ${1:ComponentName}>;"
+			""
+			"export const ${2}: Story = {"
+			"	args: {"
+			"		${3}"
+			"	},"
+			"};"
+		],
+		"description": "Insert Storybook template."
+	}
+}

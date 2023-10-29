@@ -1,3 +1,4 @@
+// used in SVGs to change rotation via transform property
 import { Direction } from "@base/enums/Direction";
 
 export function calcRotation(
