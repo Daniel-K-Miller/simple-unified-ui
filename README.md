@@ -80,6 +80,8 @@ Because this repository utilises Storybook.js you are able to preview components
 2. Install the required dependencies with `npm i`
 3. Run storybook via `npm run storybook`
 
+<img width="1505" alt="Screenshot 2023-12-26 at 23 15 25" src="https://github.com/Daniel-K-Miller/simple-unified-ui/assets/41994775/8f1c60d3-6303-4040-8cc2-74b15e22799a">
+
 ## Component Tiers
 
 It might also be useful to understand the structuring of components within the Storybook instance when navigating and NEEDED to be known if intending to contribute to the library.
