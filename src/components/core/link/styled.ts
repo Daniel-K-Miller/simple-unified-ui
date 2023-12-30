@@ -26,6 +26,7 @@ const LinkStyled = styled(Link)`
 		&.clickable {
 			&::after {
 				content: "";
+				position: absolute;
 				left: 0;
 				right: 0;
 				display: block;

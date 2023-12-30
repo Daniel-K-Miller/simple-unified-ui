@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useState, useEffect, useRef } from "react";
 
-import { LinkStyled } from "@components/core/link/styled";
-import { MainMenuStyled } from "@base/components/advanced/header/MainMenu/styled";
-import { ITopLevelLink } from "@interfaces/ILink";
+import { MobileMenu } from "./mobileMenu/index";
+import { DesktopMenu } from "./desktopMenu/index";
 
 import { IHeaderTopLevelILink } from "@base/interfaces/IHeaderContent";
 import { IHeaderProps } from "./props";
@@ -10,11 +9,12 @@ import { IHeaderProps } from "./props";
 import { useElementSize } from "@base/hooks/useElementSize";
 
 const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
-	const [MainMenuLinks, setMainMenuLinks] =
-		useState<Array<IHeaderTopLevelILink>>();
-	const [currentMainMenuLinks, setCurrentMainMenuLinks] =
-		useState<IHeaderTopLevelILink>();
-	const [isMainMenuActive, setIsMainMenuActive] = useState(false);
+	// these are used for both the MainMenu (Desktop) and Hamburger menu (Mobile)
+	const [currentSubMenuLinks, setCurrentSubMenuLinks] =
+		useState<IHeaderTopLevelILink | null>(null);
+
+	// these are used for both the MainMenu (Desktop) and Hamburger menu (Mobile)
+	const [isSubMenusActive, setIsSubMenusActive] = useState(false);
 
 	const [isMobileMenu, setIsMobileMenu] = useState(false);
 
@@ -22,75 +22,56 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 
 	const elSize = useElementSize(headerEl.current);
 
-	const updateMainMenu = (contentKey: string) => {
-		if (
-			contentKey === currentMainMenuLinks?.name ||
-			currentMainMenuLinks?.name === undefined ||
-			(isMainMenuActive === false && contentKey !== currentMainMenuLinks?.name)
-		)
-			setIsMainMenuActive(!isMainMenuActive);
+	const updateSubMenus = (contentKey: string | null) => {
+		if (contentKey !== null) {
+			// TODO: consider if we also have mobile menu up
+			if (
+				contentKey === currentSubMenuLinks?.name ||
+				currentSubMenuLinks?.name === undefined ||
+				(isSubMenusActive === false && contentKey !== currentSubMenuLinks?.name)
+			)
+				setIsSubMenusActive(!isSubMenusActive);
 
-		const errorPrefix = "Failed to update MainMenu:";
+			const errorPrefix = "Failed to update MainMenu:";
 
-		if (MainMenuLinks === undefined) {
-			throw new Error(`${errorPrefix} MainMenu content not found!`);
+			if (links === undefined) {
+				throw new Error(`${errorPrefix} MainMenu content not found!`);
+			}
+
+			const currentLink = links.find((link) => link.name === contentKey);
+
+			if (currentLink === undefined) {
+				throw new Error(`${errorPrefix} contentKey not found in totalContent!`);
+			}
+
+			setCurrentSubMenuLinks(currentLink);
+		} else {
+			setIsSubMenusActive(false);
+			setCurrentSubMenuLinks(null);
 		}
-
-		const currentLink = MainMenuLinks.find((link) => link.name === contentKey);
-
-		if (currentLink === undefined) {
-			throw new Error(`${errorPrefix} contentKey not found in totalContent!`);
-		}
-
-		setCurrentMainMenuLinks(currentLink);
-	};
-
-	const generateTopLevelLinks = (links: Array<ITopLevelLink>) => {
-		const mappedLinks = links.map((link, index) => (
-			// handleClick is not undefined if button does not re-direct (indicated by isClickable property)
-			<LinkStyled
-				key={`${index}`}
-				name={link.name}
-				href={link.href}
-				withLi={true}
-				isClickable={link.isClickable}
-				isActive={link.name === currentMainMenuLinks?.name && isMainMenuActive}
-				handleClick={
-					link.isClickable ? (key) => updateMainMenu(key) : undefined
-				}
-			/>
-		));
-
-		return <ul>{mappedLinks}</ul>;
-	};
-
-	const generateMobileMenu = () => {
-		return undefined;
-	};
-
-	const generateDesktopMenu = () => {
-		return (
-			<React.Fragment>
-				<nav>{generateTopLevelLinks(links)}</nav>
-				<MainMenuStyled
-					isActive={isMainMenuActive}
-					content={currentMainMenuLinks?.content}
-				/>
-			</React.Fragment>
-		);
 	};
 
 	const generateMenu = () => {
 		if (isMobileMenu) {
-			return generateMobileMenu();
+			return (
+				<MobileMenu
+					currentSubMenuLinks={currentSubMenuLinks}
+					initialExpandedValue={isSubMenusActive}
+					subMenuLinks={links}
+					updateSubMenus={updateSubMenus}
+				/>
+			);
 		} else {
-			return generateDesktopMenu();
+			return (
+				<DesktopMenu
+					currentSubMenuLinks={currentSubMenuLinks}
+					isMainMenuActive={isSubMenusActive}
+					subMenuLinks={links}
+					updateSubMenus={updateSubMenus}
+				/>
+			);
 		}
 	};
-
-	useEffect(() => {
-		setMainMenuLinks(links);
-	}, []);
 
 	useEffect(() => {
 		if (elSize.width === undefined) return;
@@ -100,9 +81,10 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 				setIsMobileMenu(true);
 			}
 
-			if (isMainMenuActive === true) {
-				setIsMainMenuActive(false);
-			}
+			// force menu to lose state on transition
+			// if (isSubMenusActive === true) {
+			// 	setIsSubMenusActive(false);
+			// }
 		} else if (elSize.width > 501) {
 			if (isMobileMenu === true) {
 				setIsMobileMenu(false);
