@@ -22,7 +22,7 @@ const MainMenu: FunctionComponent<IMainMenu> = ({
 								<LinkStyled
 									key={index}
 									href={link.href}
-									isClickable={false}
+									isButton={false}
 									name={link.name}
 								/>
 							);

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, useRef } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 
 import { usePrevious } from "@base/hooks/usePrevious";
 
