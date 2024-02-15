@@ -10,3 +10,7 @@ export * from "./basic/grid/item/styled";
 export * from "./core/svgs/chevron/index";
 export * from "./core/svgs/moon/index";
 export * from "./core/svgs/sun/index";
+
+export * from "./advanced/header/index";
+export * from "./advanced/header/desktopMenu/index";
+export * from "./advanced/header/mobileMenu/index";
