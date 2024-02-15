@@ -8,6 +8,10 @@ const LinkStyled = styled(Link)`
 		text-decoration: none;
 		color: ${props.theme.colors.text};
 		max-width: max-content;
+		border: none;
+		background: transparent;
+		font-size: 1rem;
+		cursor: pointer;
 		&:hover {
 			color: ${props.theme.colors.textAlt};
 			&.clickable {
@@ -27,6 +31,7 @@ const LinkStyled = styled(Link)`
 			&::after {
 				content: "";
 				position: absolute;
+				bottom: 0;
 				left: 0;
 				right: 0;
 				display: block;

@@ -6,6 +6,8 @@ import { DesktopMenu } from "./desktopMenu/index";
 import { IHeaderTopLevelILink } from "@base/interfaces/IHeaderContent";
 import { IHeaderProps } from "./props";
 
+import { MenuType } from "@base/enums/MenuType";
+
 import { useElementSize } from "@base/hooks/useElementSize";
 
 const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
@@ -16,7 +18,11 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 	// these are used for both the MainMenu (Desktop) and Hamburger menu (Mobile)
 	const [isSubMenusActive, setIsSubMenusActive] = useState(false);
 
-	const [isMobileMenu, setIsMobileMenu] = useState(false);
+	const [isMobileMenu, setIsMobileMenu] = useState<boolean | null>(null);
+
+	const [previousMenuActive, setPreviousMenuActive] = useState<MenuType | null>(
+		null
+	);
 
 	const headerEl = useRef(null);
 
@@ -52,22 +58,25 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 	};
 
 	const generateMenu = () => {
-		if (isMobileMenu) {
+		if (isMobileMenu === true) {
 			return (
 				<MobileMenu
 					currentSubMenuLinks={currentSubMenuLinks}
 					initialExpandedValue={isSubMenusActive}
 					subMenuLinks={links}
 					updateSubMenus={updateSubMenus}
+					setPreviousMenuType={setPreviousMenuActive}
+					previousMenuActive={previousMenuActive}
 				/>
 			);
-		} else {
+		} else if (isMobileMenu === false) {
 			return (
 				<DesktopMenu
 					currentSubMenuLinks={currentSubMenuLinks}
 					isMainMenuActive={isSubMenusActive}
 					subMenuLinks={links}
 					updateSubMenus={updateSubMenus}
+					setPreviousMenuType={setPreviousMenuActive}
 				/>
 			);
 		}
@@ -77,7 +86,7 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 		if (elSize.width === undefined) return;
 
 		if (elSize.width <= 500) {
-			if (isMobileMenu === false) {
+			if (isMobileMenu === false || isMobileMenu === null) {
 				setIsMobileMenu(true);
 			}
 
@@ -86,7 +95,7 @@ const Header: FunctionComponent<IHeaderProps> = ({ className, links }) => {
 			// 	setIsSubMenusActive(false);
 			// }
 		} else if (elSize.width > 501) {
-			if (isMobileMenu === true) {
+			if (isMobileMenu === true || isMobileMenu === null) {
 				setIsMobileMenu(false);
 			}
 		}

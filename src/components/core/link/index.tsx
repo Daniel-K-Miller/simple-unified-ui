@@ -7,33 +7,48 @@ const Link: FunctionComponent<ILink> = ({
 	name,
 	href,
 	withLi,
-	isClickable,
+	isButton,
 	isActive,
 	handleClick,
 }) => {
 	// add isClickable class from prop if appropriate
 	const generateClassName = () =>
-		`${className} ${isClickable && "clickable"} ${isActive && "active"}`;
+		`${className} ${isButton && "clickable"} ${isActive && "active"}`;
 
 	const handleClickExtension = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+		event:
+			| React.MouseEvent<HTMLAnchorElement, MouseEvent>
+			| React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
-		if (isClickable) {
+		if (isButton) {
 			event.preventDefault();
 
 			if (handleClick !== undefined) handleClick(name);
 		}
 	};
 
-	const link = (
-		<a
-			className={generateClassName()}
-			href={href}
-			onClick={(e) => handleClickExtension(e)}
-		>
-			{name}
-		</a>
-	);
+	let link: any = null;
+
+	if (!isButton) {
+		link = (
+			<a
+				className={generateClassName()}
+				href={href}
+				onClick={(e) => handleClickExtension(e)}
+			>
+				{name}
+			</a>
+		);
+	} else {
+		link = (
+			<button
+				className={generateClassName()}
+				onClick={(e) => handleClickExtension(e)}
+			>
+				{name}
+			</button>
+		);
+	}
 
 	if (withLi) {
 		return <li>{link}</li>;
